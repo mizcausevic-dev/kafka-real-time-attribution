@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - project/kafka-real-time-attribution
+  pull_request:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: microsoft
+          java-version: "21"
+      - name: Run tests
+        run: .\mvnw.cmd test
+      - name: Build package
+        run: .\mvnw.cmd package
