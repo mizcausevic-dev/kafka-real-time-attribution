@@ -40,7 +40,7 @@ event streams so channel credit stays ordered, replayable, and commercially beli
 ## Local Run
 
 ```powershell
-Set-Location "C:\Users\chaus\dev\repos\kafka-real-time-attribution"
+cd kafka-real-time-attribution
 $env:JAVA_HOME = "C:\Program Files\Microsoft\jdk-21.0.11.10-hotspot"
 $env:Path = "$env:JAVA_HOME\bin;$env:Path"
 .\mvnw.cmd spring-boot:run
@@ -74,7 +74,7 @@ This exposes:
 ## Validation
 
 ```powershell
-Set-Location "C:\Users\chaus\dev\repos\kafka-real-time-attribution"
+cd kafka-real-time-attribution
 $env:JAVA_HOME = "C:\Program Files\Microsoft\jdk-21.0.11.10-hotspot"
 $env:Path = "$env:JAVA_HOME\bin;$env:Path"
 .\mvnw.cmd test
